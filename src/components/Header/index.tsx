@@ -1,11 +1,15 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { AppBar, Typography, Toolbar, Box } from '@mui/material';
 
 const Header = () => {
   return (
-    <Button variant="contained">
-      <h1>Hello, World!</h1>
-    </Button>
+    <AppBar>
+      <Toolbar variant="dense">
+        <Typography variant="h6" color="inherit">
+          Фото
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 

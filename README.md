@@ -1,6 +1,6 @@
 # Начало работы с созданием приложения React
 
-Этот проект был загружен с помощью [Create React App](https://github.com/facebook/create-react-app).
+Этот проект был загружен с помощью [Vite](https://github.com/vitejs/vite).
 
 ## Доступные скрипты
 
