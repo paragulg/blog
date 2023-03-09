@@ -1,15 +1,18 @@
 import React from 'react';
-import { AppBar, Typography, Toolbar, Box } from '@mui/material';
+import { AppBar, Typography, Toolbar } from '@mui/material';
+import './Header.module.css'
 
 const Header = () => {
   return (
-    <AppBar>
-      <Toolbar variant="dense">
-        <Typography variant="h6" color="inherit">
-          Фото
-        </Typography>
-      </Toolbar>
-    </AppBar>
+    <div className="header">
+      <AppBar>
+        <Toolbar>
+          <Typography variant="h6" color="inherit">
+            Фото
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 };
 
