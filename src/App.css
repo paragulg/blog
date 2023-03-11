@@ -1,5 +1,5 @@
 body {
-  display: flex;
+  display: inline-flex;
   background-color: grey;
   width: 50%;
   margin: 0 0 0 25%;
@@ -8,4 +8,21 @@ body {
 
 .header {
   margin-bottom: 430px;
+}
+
+.cards {
+  position: relative;
+}
+.deleteButton {
+  position: absolute;
+  right: -385px;
+}
+
+.editButton {
+  position: absolute;
+  right: -150px;
+}
+
+.cards Button {
+
 }

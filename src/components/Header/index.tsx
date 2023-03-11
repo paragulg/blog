@@ -1,6 +1,5 @@
 import React from 'react';
 import { AppBar, Typography, Toolbar } from '@mui/material';
-import './Header.module.css'
 
 const Header = () => {
   return (
