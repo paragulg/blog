@@ -10,17 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 
-const Posts = () => {
-  const [inputName, setInputName] = React.useState('');
-  const [inputText, setInputText] = React.useState('');
-
-  const [cards, setCards] = React.useState({id: 0, name: inputName, text: inputText});
-
-  const onClickPublish = () => { 
-    setCards({ id: cards.id + 1, name: inputName, text: inputText });
-    console.log(cards);
-  };
-
+const Posts = ({ inputName, setInputName, inputText, setInputText, publish, cards }) => {
   return (
     <div className="posts">
       <Box sx={{ width: 500, height: 400, backgroundColor: 'white', mt: -40 }}>
@@ -48,29 +38,31 @@ const Posts = () => {
           />
         </center>
         <center>
-          <Button sx={{ m: 2.5 }} onClick={() => onClickPublish()} variant="contained">
+          <Button sx={{ m: 2.5 }} onClick={publish} variant="contained">
             Опубликовать
           </Button>
         </center>
       </Box>
-      <Card className="cards" sx={{ width: 500, height: 400, mt: 5, mb: 5 }}>
-        <CardContent>
-          <CardActions sx={{ width: 'max-content' }}>
-            <Button className="deleteButton" size="small" variant="outlined">
-              Удалить
-            </Button>
-            <Button className="editButton" size="small" variant="outlined">
-              Редактировать
-            </Button>
-          </CardActions>
-          <Typography sx={{ fontSize: 24 }} color="text.secondary" gutterBottom>
-            {inputName}
-          </Typography>
-          <Typography variant="h6">
-            {inputText}
-          </Typography>
-        </CardContent>
-      </Card>
+      <div className="cards">
+        {cards.map((entry, index) => (
+          <Card key={index} sx={{ width: 500, height: 400, mt: 5, mb: 5 }}>
+            <CardContent>
+              <CardActions sx={{ width: 'max-content' }}>
+                <Button className="deleteButton" size="small" variant="outlined">
+                  Удалить
+                </Button>
+                <Button className="editButton" size="small" variant="outlined">
+                  Редактировать
+                </Button>
+              </CardActions>
+              <Typography sx={{ fontSize: 24 }} color="text.secondary" gutterBottom>
+                {entry.name}
+              </Typography>
+              <Typography variant="h6">{entry.text}</Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };
